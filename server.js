@@ -1,16 +1,24 @@
-// This is a test server. Development TBD
+// Dependencies
+// =============================================================
+var express = require("express");
 
-var http = require("http");
-
+var app = express();
 var PORT = process.env.PORT || 8080;
 
-function handleRequest(request, response) {
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-  response.end("It Works!! Path Hit: " + request.url);
-}
+// Static directory
+app.use(express.static("app/public"));
 
-var server = http.createServer(handleRequest);
+// Routes
+// =============================================================
+require("./app/routes/api-routes.js")(app);
+require("./app/routes/html-routes.js")(app);
 
-server.listen(PORT, function() {
-  console.log("Server listening on: http://localhost:" + PORT);
+// Starts the server to begin listening
+// =============================================================
+app.listen(PORT, function() {
+  console.log("App listening on PORT " + PORT);
 });
