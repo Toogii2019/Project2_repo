@@ -2,5 +2,5 @@ const testFunc = require("../lib/test_helper.js");
 
 test("Can add two numbers and return the result", () => {
     const result = testFunc(5, 10);
-    expect(13).toBe(result);
+    expect(15).toBe(result);
   });
