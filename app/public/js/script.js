@@ -25,7 +25,6 @@ $("#user-submit").on("click", function(event) {
 });
 
 $.get("/api/users", function(data) {
-    console.log("Received");
 
     if (data.length !== 0) {
     
