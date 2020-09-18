@@ -2,7 +2,6 @@
 // When user clicks add-btn
 $("#user-submit").on("click", function(event) {
     event.preventDefault();
-    console.log("Done");
     // Make a newUser object
     var newUser = {
       firstName: $("#first-name").val().trim(),
@@ -15,19 +14,14 @@ $("#user-submit").on("click", function(event) {
         alert("Please fill up all the required fields!");
         return;
     }
-
-    console.log(newUser);
   
     // Send an AJAX POST-request with jQuery
     $.post("/api/new_user", newUser)
       // On success, run the following code
       .then(function() {
   
-       console.log("Done")
   
       });
-
-
 });
 
 $.get("/api/users", function(data) {
