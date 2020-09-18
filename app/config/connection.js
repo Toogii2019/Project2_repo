@@ -14,6 +14,10 @@ var sequelize = new Sequelize(process.env.DBNAME || "hounted_house_db", process.
   host: process.env.DBHOST || "localhost",
   port: process.env.DBPORT || 3306,
   dialect: process.env.DIALECT || "mysql",
+  dialectOptions: {
+    statement_timeout: 1000,
+    idle_in_transaction_session_timeout: 5000
+  },
   pool: {
     max: 5,
     min: 1,
