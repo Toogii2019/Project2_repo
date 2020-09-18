@@ -18,7 +18,27 @@ var sequelize = new Sequelize(process.env.DBNAME || "hounted_house_db", process.
     max: 5,
     min: 1,
     idle: 10000
-  }
+  },
+  retry: {
+    match: [
+        /ETIMEDOUT/,
+        /EHOSTUNREACH/,
+        /ECONNRESET/,
+        /ECONNREFUSED/,
+        /ETIMEDOUT/,
+        /ESOCKETTIMEDOUT/,
+        /EHOSTUNREACH/,
+        /EPIPE/,
+        /EAI_AGAIN/,
+        /SequelizeConnectionError/,
+        /SequelizeConnectionRefusedError/,
+        /SequelizeHostNotFoundError/,
+        /SequelizeHostNotReachableError/,
+        /SequelizeInvalidConnectionError/,
+        /SequelizeConnectionTimedOutError/
+    ],
+    max: 5
+}
 });
 
 // Exports the connection for other files to use
