@@ -5,12 +5,11 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
 // Creates a "Chirp" model that matches up with DB
-var Users = sequelize.define("users", {
+var Users = sequelize.define("hounted_users", {
   first_name: Sequelize.STRING,
   last_name: Sequelize.STRING,
   username: Sequelize.STRING,
-  password: Sequelize.password,
-  created_at: Sequelize.DATE
+  password: Sequelize.STRING,
 });
 
 // Syncs with DB
@@ -18,3 +17,5 @@ Users.sync();
 
 // Makes the Chirp Model available for other files (will also create a table)
 module.exports = Users;
+
+
