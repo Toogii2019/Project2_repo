@@ -3,7 +3,7 @@
 $("#user-submit").on("click", function(event) {
     event.preventDefault();
     console.log("Done");
-    // Make a newChirp object
+    // Make a newUser object
     var newUser = {
       firstName: $("#first-name").val().trim(),
       lastName: $("#last-name").val().trim(),

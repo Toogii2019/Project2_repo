@@ -4,7 +4,7 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
 
-// Creates a "Chirp" model that matches up with DB
+// Creates a "hounted_users" model that matches up with DB
 var Users = sequelize.define("hounted_users", {
   first_name: Sequelize.STRING,
   last_name: Sequelize.STRING,
@@ -15,7 +15,7 @@ var Users = sequelize.define("hounted_users", {
 // Syncs with DB
 Users.sync();
 
-// Makes the Chirp Model available for other files (will also create a table)
+// Makes the hounted_users Model available for other files (will also create a table)
 module.exports = Users;
 
 
