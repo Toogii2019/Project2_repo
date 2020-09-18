@@ -19,7 +19,7 @@ $("#user-submit").on("click", function(event) {
     $.post("/api/new_user", newUser)
       // On success, run the following code
       .then(function() {
-  
+        location.reload();
   
       });
 });
