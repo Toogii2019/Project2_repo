@@ -37,7 +37,7 @@ $.get("/api/users", function(data) {
             row.append("<p> Last Name: " + data[i].last_name + "</p>");
             row.append("<p> Username: " + data[i].username + "</p>");
         
-            $("#users-area").prepend(row);
+            $("#users-area").append(row);
     
         }
     

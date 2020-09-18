@@ -17,7 +17,7 @@ var sequelize = new Sequelize(process.env.DBNAME || "hounted_house_db", process.
   pool: {
     max: 5,
     min: 1,
-    idle: 10000
+    idle: 10
   }
 });
 
