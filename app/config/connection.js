@@ -13,15 +13,11 @@ var Sequelize = require("sequelize");
 var sequelize = new Sequelize(process.env.DBNAME || "hounted_house_db", process.env.DBUNAME || "root", process.env.DBPWD || "rootadmin", {
   host: process.env.DBHOST || "localhost",
   port: process.env.DBPORT || 3306,
-  dialect: process.env.DIALECT || "mysql",
-  dialectOptions: {
-    statement_timeout: 1000,
-    idle_in_transaction_session_timeout: 5000
-  },
+  dialect: "mysql",
   pool: {
     max: 5,
     min: 1,
-    idle: 10
+    idle: 10000
   }
 });
 
