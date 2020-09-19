@@ -4,11 +4,12 @@ var express = require("express");
 
 var app = express();
 var PORT = process.env.PORT || 8080;
+var session = require('express-session');
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(session({ secret: 'p2QnhC7iAFjlP10' }));
 
 // Static directory
 app.use(express.static("app/public"));

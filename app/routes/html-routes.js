@@ -5,12 +5,14 @@
 // Dependencies
 // =============================================================
 var path = require("path");
+var session = require('express-session');
 
+var sess;
 
 // Routes
 // =============================================================
 module.exports = function(app) {
-
+  app.use(session({secret: 'dasdsadfasfasf'}));
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads view.html
@@ -19,11 +21,16 @@ module.exports = function(app) {
   });
 
   app.get("/sign_in", function(req, res) {
+    sess = req.session;
+    console.log(sess.email);
     res.sendFile(path.join(__dirname, "../public/signin.html"));
   });
 
-  app.post("/sign_in", function(req, res) {
-    console.log(req);
-    res.end();
+  app.get("/home", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
+
+
+
+
 };
