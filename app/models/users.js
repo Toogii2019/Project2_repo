@@ -11,7 +11,6 @@ var Users = sequelize.define("users", {
   last_name: Sequelize.STRING,
   email: Sequelize.STRING,
   password: Sequelize.STRING,
-  isAuthenticated: Sequelize.BOOLEAN,
 });
 
 // Syncs with DB
