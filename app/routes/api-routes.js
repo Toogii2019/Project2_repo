@@ -52,6 +52,14 @@ module.exports = function(app) {
     });
   });
 
+  app.post("/api/sign_out", function(req, res) {
+    if (req.session.user) {
+      req.session.user = null;
+    }
+    var messageData = {msg: "Successfully logged out"};
+    res.render("signin", {message: messageData}); 
+  });
+
 };
 
 
