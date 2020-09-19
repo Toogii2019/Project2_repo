@@ -32,27 +32,28 @@ module.exports = function(app) {
       res.end();
     });
 
-  app.post("/api/sign_in", urlencodedParser, function(req, res) {
+  app.post("/api/sign", function(req, res) {
     // console.log(req);
-    console.log("On it");
-    console.log(req.body);
     Users.findOne({
         where: {
-          email: "test@email.com"
+          email: req.body.email,
         }      
         }).then(function(result) {
+          if (! result) {
+            res.redirect("/sign_in");
+            return;
+          }
             // if (err) {
             //     throw err;
             // }
-            console.log(result.password);
-
-            bcrypt.compare("pass123", result.password, function(err, authenticated) {
+      
+            bcrypt.compare(req.body.password, result.password, function(err, authenticated) {
               console.log(authenticated);
               if (authenticated) {
-                res.sendFile(path.join(__dirname, "../public/index.html"));
+                res.redirect("/home");
               }
               else {
-                res.sendFile(path.join(__dirname, "../public/signin.html"));
+                return res.redirect("/sign_in");
               }
             });
         })
