@@ -23,18 +23,18 @@
   </head>
   <body>
     <div id="login-div">
-        <form class="form-inline">
+        <form class="form-inline" action="/api/new_user" method="POST">
             <label class="sr-only" for="inlineFormInputName2">First Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" id="first-name" placeholder="First Name">
+            <input type="text" class="form-control mb-2 mr-sm-2" id="first-name" name="firstName" placeholder="First Name">
 
             <label class="sr-only" for="inlineFormInputName2">Last Name</label>
-            <input type="text" class="form-control mb-2 mr-sm-2" id="last-name" placeholder="Last Name">
+            <input type="text" class="form-control mb-2 mr-sm-2" id="last-name" name="lastName" placeholder="Last Name">
 
             <label class="sr-only" for="inlineFormInputName2">Email</label>
-            <input type="email" class="form-control mb-2 mr-sm-2" id="email" placeholder="email">
+            <input type="email" class="form-control mb-2 mr-sm-2" id="email" name="email" placeholder="email">
 
             <label class="sr-only" for="inlineFormInputName2">password</label>
-            <input type="password" class="form-control mb-2 mr-sm-2" id="password" placeholder="password">
+            <input type="password" class="form-control mb-2 mr-sm-2" id="password" name="password" placeholder="password">
             <button id="user-submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
@@ -42,5 +42,5 @@
         
     </div>
 </body>
-<script type="text/javascript" src="js/script.js"></script>
+<!-- <script type="text/javascript" src="js/script.js"></script> -->
 </html>

@@ -20,7 +20,6 @@ $("#user-submit").on("click", function(event) {
       // On success, run the following code
       .then(function() {
         location.reload();
-  
       });
 });
 
