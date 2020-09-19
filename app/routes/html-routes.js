@@ -15,8 +15,7 @@ module.exports = function(app) {
   app.use(cookieParser());
 
 
-  app.get("/home", function(req, res) {
-    console.log(req.session.user);
+  app.get("/", function(req, res) {
     if (req.session.user) {
       Users.findOne({
         where: {
@@ -24,27 +23,24 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (! result) {
-            res.redirect("/sign_in");
+            res.render("signin", {message: "User Doesn't Exist In Out Database"});
             return;
           }
           else {
-            res.redirect("/home");
+            res.render("home");
           }
         });
     }
     else {
-      res.sendFile(path.join(__dirname, "../public/signin.html"));
+      res.render("signin", {message: "Please Sign In"}); 
     }
   });
 
   app.get("/sign_up", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/registration.html"));
+    res.render("registration"); 
   });
   
   app.get("/sign_in", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/signin.html"));
+    res.render( 'signin' ); 
   });
-
-
-
 };

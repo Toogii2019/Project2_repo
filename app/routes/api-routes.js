@@ -20,8 +20,7 @@ module.exports = function(app) {
   app.use(bodyParser.urlencoded({ extended: true })); 
   
   app.post("/api/new_user", function(req, res) {
-    writeUserToDb(req.body.firstName, req.body.lastName, req.body.email, req.body.password);
-    res.redirect("/sign_in");
+    writeUserToDb(req.body.firstName, req.body.lastName, req.body.email, req.body.password, res);
   });
 
   app.post("/api/sign", function(req, res) {
@@ -35,13 +34,10 @@ module.exports = function(app) {
             return;
           }
       
-          bcrypt.compare(req.body.password, result.password, function(err, authenticated) {
-            console.log(authenticated);
-            
+          bcrypt.compare(req.body.password, result.password, function(err, authenticated) {            
             if (authenticated) {
               req.session.user = req.body.email;
-              console.log(req.session.user);
-              res.sendFile(path.join(__dirname, "../public/index.html"));
+              res.redirect("/");
             }
             else {
               res.redirect("/sign_in");
@@ -52,8 +48,7 @@ module.exports = function(app) {
 
   app.get("/api/users", function(req, res) {
     Users.findAll({}).then(function(results) {
-
-      res.json(results);
+      res.render("signin", {message: "Registered Successfully"});
     });
   });
 
