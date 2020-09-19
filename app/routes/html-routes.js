@@ -22,17 +22,15 @@ module.exports = function(app) {
           email: req.session.user,
         }      
         }).then(function(result) {
-          if (! result) {
-            res.render("signin", {message: "User Doesn't Exist In Out Database"});
-            return;
-          }
-          else {
-            res.render("home");
+          if (result) {
+            var userData = {username: result.email, score:0};
+            res.render("home", {user: userData});
           }
         });
     }
     else {
-      res.render("signin", {message: "Please Sign In"}); 
+      var messageData = {msg: "Please Sign In"};
+      res.render("signin", {message: messageData}); 
     }
   });
 
@@ -41,6 +39,6 @@ module.exports = function(app) {
   });
   
   app.get("/sign_in", function(req, res) {
-    res.render( 'signin' ); 
+    res.render( "signin" ); 
   });
 };
