@@ -6,11 +6,11 @@ $("#user-submit").on("click", function(event) {
     var newUser = {
       firstName: $("#first-name").val().trim(),
       lastName: $("#last-name").val().trim(),
-      username: $("#username").val().trim(),
+      email: $("#email").val().trim(),
       password: $("#password").val().trim(),
     };
     
-    if (! newUser.firstName || ! newUser.lastName || ! newUser.username || ! newUser.password) {
+    if (! newUser.firstName || ! newUser.lastName || ! newUser.email || ! newUser.password) {
         alert("Please fill up all the required fields!");
         return;
     }
@@ -35,7 +35,7 @@ $.get("/api/users", function(data) {
             row.append(`<h3> User #${i+1}: </h3>`);
             row.append("<p> First Name: " + data[i].first_name + "</p>");
             row.append("<p> Last Name: " + data[i].last_name + "</p>");
-            row.append("<p> Username: " + data[i].username + "</p>");
+            row.append("<p> email: " + data[i].email + "</p>");
         
             $("#users-area").append(row);
     
