@@ -9,11 +9,17 @@ var session = require('express-session');
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(session({ secret: 'p2QnhC7iAFjlP10' }));
+
+
 
 // Static directory
 app.use(express.static("app/public"));
-
+app.use(session({
+  cookieName: 'session',
+  secret: 'dasdsadfghd4564566784',
+  resave: false,
+  saveUninitialized: false,
+}));
 // Handlebars
 
 var exphbs = require("express-handlebars");

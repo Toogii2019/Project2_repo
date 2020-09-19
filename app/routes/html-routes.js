@@ -5,31 +5,45 @@
 // Dependencies
 // =============================================================
 var path = require("path");
-var session = require('express-session');
-
-var sess;
+var cookieParser = require('cookie-parser');
+var Users = require("../models/users.js");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
-  app.use(session({secret: 'dasdsadfasfasf'}));
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+  
+  app.use(cookieParser());
 
-  // index route loads view.html
+
+  app.get("/home", function(req, res) {
+    console.log(req.session.user);
+    if (req.session.user) {
+      Users.findOne({
+        where: {
+          email: req.session.user,
+        }      
+        }).then(function(result) {
+          if (! result) {
+            res.redirect("/sign_in");
+            return;
+          }
+          else {
+            res.redirect("/home");
+          }
+        });
+    }
+    else {
+      res.sendFile(path.join(__dirname, "../public/signin.html"));
+    }
+  });
+
   app.get("/sign_up", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/registration.html"));
   });
-
+  
   app.get("/sign_in", function(req, res) {
-    sess = req.session;
-    console.log(sess.email);
     res.sendFile(path.join(__dirname, "../public/signin.html"));
   });
-
-  app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
-
 
 
 
