@@ -49,16 +49,61 @@ module.exports = function(app) {
   });
 
   app.get("/trivia", function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/trivia/trivia.html'));
+    if (req.session.user) {
+      Users.findOne({
+        where: {
+          email: req.session.user,
+        }      
+        }).then(function(result) {
+          if (result) {
+            res.sendFile(path.join(__dirname, '../public/trivia/trivia.html'));
+          }
+        });
+    }
+    else {
+      res.redirect("/sign_in"); 
+    }
+
+
+    // res.sendFile(path.join(__dirname, '../public/trivia/trivia.html'));
   });
 
   app.get("/tetris", function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/tetris/tetris.html'));
+
+    if (req.session.user) {
+      Users.findOne({
+        where: {
+          email: req.session.user,
+        }      
+        }).then(function(result) {
+          if (result) {
+            res.sendFile(path.join(__dirname, '../public/tetris/tetris.html'));
+          }
+        });
+    }
+    else {
+      res.redirect("/sign_in"); 
+    }
   });
 
   app.get("/flappy_bird", function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/flappy_bird/flappy_bird.html'));
+
+    if (req.session.user) {
+      Users.findOne({
+        where: {
+          email: req.session.user,
+        }      
+        }).then(function(result) {
+          if (result) {
+            res.sendFile(path.join(__dirname, '../public/flappy_bird/flappy_bird.html'));
+          }
+        });
+    }
+    else {
+      res.redirect("/sign_in"); 
+    }
   });
+
   
   app.use(function(req, res){
     res.redirect("/");
