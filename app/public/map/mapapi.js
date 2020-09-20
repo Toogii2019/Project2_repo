@@ -29,10 +29,14 @@ const apiKey = "AIzaSyChs4wyhn9M-1Nl7QJkEInXTOy0p4347Jo"
           var infowindow = new google.maps.InfoWindow({
           content: ""
           });
-          marker.addListener('click', function() {
+          marker.addListener('click', function(event) {
+
+          var myLat = event.latLng.lat();
+          var myLng = event.latLng.lng();
+          var mylatLng = new google.maps.LatLng(myLat, myLng);
           infowindow.open(map, marker);
           infowindow.setContent("<h3>"+this.title+"</h3>");
-          infowindow.setPosition(marker);
+          infowindow.setPosition(mylatLng);
           });
           marker.setMap(map);
         }
