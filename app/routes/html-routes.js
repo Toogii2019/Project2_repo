@@ -52,8 +52,12 @@ module.exports = function(app) {
     res.render( "trivia" ); 
   });
 
-  app.get("/triviaend", function(req, res) {
-    res.render( "triviaend" ); 
+  app.get("/tetris", function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/tetris/tetris.html'));
+  });
+
+  app.get("/flappy_bird", function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/flappy_bird/flappy_bird.html'));
   });
   
   app.use(function(req, res){
