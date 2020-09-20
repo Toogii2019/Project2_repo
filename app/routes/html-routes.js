@@ -47,8 +47,17 @@ module.exports = function(app) {
   app.get("/sign_in", function(req, res) {
     res.render( "signin" ); 
   });
+
+  app.get("/trivia", function(req, res) {
+    res.render( "trivia" ); 
+  });
+
+  app.get("/triviaend", function(req, res) {
+    res.render( "triviaend" ); 
+  });
+  
   app.use(function(req, res){
     res.redirect("/");
-});
+  });
 
 };
