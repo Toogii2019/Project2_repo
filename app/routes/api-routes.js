@@ -30,7 +30,8 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (! result) {
-            res.redirect("/sign_in");
+            var messageData = {msg: "Authentication Failed!"};
+            res.render("signin", {message: messageData}); 
             return;
           }
       
@@ -40,7 +41,8 @@ module.exports = function(app) {
               res.redirect("/");
             }
             else {
-              res.redirect("/sign_in");
+              var messageData = {msg: "Authentication Failed!"};
+              res.render("signin", {message: messageData}); 
             }
           });
         })
@@ -48,7 +50,7 @@ module.exports = function(app) {
 
   app.get("/api/users", function(req, res) {
     Users.findAll({}).then(function(results) {
-      res.render("signin", {message: "Registered Successfully"});
+      res.render("signin");
     });
   });
 

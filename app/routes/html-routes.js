@@ -7,14 +7,12 @@
 var path = require("path");
 var cookieParser = require('cookie-parser');
 var Users = require("../models/users.js");
+const Game = require("../models/game.js");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
-  
   app.use(cookieParser());
-
-
   app.get("/", function(req, res) {
     if (req.session.user) {
       Users.findOne({
@@ -23,8 +21,15 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            var userData = {username: result.email, score:0};
-            res.render("home", {user: userData});
+
+            Game.findOne({
+              where: {
+                email: result.email,
+              }
+            }).then(function(game_result) {
+              var userData = {username: game_result.email, score : game_result.score};
+              res.render("home", {user: userData});
+            })
           }
         });
     }
@@ -35,10 +40,15 @@ module.exports = function(app) {
   });
 
   app.get("/sign_up", function(req, res) {
-    res.render("registration"); 
+    var messageData = {msg: "Please register as a new user"};
+    res.render("registration", {message: messageData}); 
   });
   
   app.get("/sign_in", function(req, res) {
     res.render( "signin" ); 
   });
+  app.use(function(req, res){
+    res.redirect("/");
+});
+
 };
