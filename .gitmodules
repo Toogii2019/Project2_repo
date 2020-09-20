@@ -1,0 +1,6 @@
+[submodule "blockrain.js"]
+	path = blockrain.js
+	url = git@github.com:juleeb/blockrain.js.git
+[submodule "app/public/blockrain.js"]
+	path = app/public/blockrain.js
+	url = git@github.com:juleeb/blockrain.js.git
