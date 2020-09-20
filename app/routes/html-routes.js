@@ -104,6 +104,25 @@ module.exports = function(app) {
     }
   });
 
+
+  app.get("/map", function(req, res) {
+
+    if (req.session.user) {
+      Users.findOne({
+        where: {
+          email: req.session.user,
+        }      
+        }).then(function(result) {
+          if (result) {
+            res.sendFile(path.join(__dirname, '../public/map/map.html'));
+          }
+        });
+    }
+    else {
+      res.redirect("/sign_in"); 
+    }
+  });
+
   
   app.use(function(req, res){
     res.redirect("/");
