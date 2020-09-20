@@ -5,6 +5,8 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 8080;
 var session = require('express-session');
+var cors = require('cors')
+
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -13,6 +15,7 @@ app.use(express.json());
 
 
 // Static directory
+app.use(cors());
 app.use(express.static("app/public"));
 app.use(session({
   cookieName: 'session',
