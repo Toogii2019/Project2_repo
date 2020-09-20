@@ -49,7 +49,7 @@ module.exports = function(app) {
   });
 
   app.get("/trivia", function(req, res) {
-    res.render( "trivia" ); 
+    res.sendFile(path.join(__dirname, '../public/trivia/trivia.html'));
   });
 
   app.get("/tetris", function(req, res) {
