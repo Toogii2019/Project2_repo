@@ -25,12 +25,12 @@ function getMarkets(event){
 const zip = event.target.value;
 
   //API call maps
-  $.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${apiKey}`)
+  $.get(`https://mighty-bayou-53278.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${apiKey}`)
   .then(({results})=> {
     console.log(results);
     const {lat,lng} = results[0].geometry.location;
     // API call places   
-    $.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?name=grocery&location=${lat},${lng}&radius=3000&key=${apiKey}`)
+    $.get(`https://mighty-bayou-53278.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?name=grocery&location=${lat},${lng}&radius=3000&key=${apiKey}`)
     .then(data=> {
     for (var i = 0; i < data.results.length; i++){
       console.log(data.results.length);
