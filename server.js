@@ -6,8 +6,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 var session = require('express-session');
 var cors = require('cors')
-var  dotenv = require('dotenv').config();
-
+require('dotenv').config( );
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -24,6 +23,9 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
 }));
+
+console.log(process.env.googlemapApi);
+
 // Handlebars
 
 var exphbs = require("express-handlebars");
