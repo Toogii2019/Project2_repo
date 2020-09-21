@@ -1,5 +1,5 @@
 var map;
-const apiKey = "AIzaSyChs4wyhn9M-1Nl7QJkEInXTOy0p4347Jo";
+const apiKey = process.env.googlemapApi;
 
 // Map
 function initMap() {
