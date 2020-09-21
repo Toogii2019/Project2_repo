@@ -45,7 +45,9 @@ Travis CI will run npm test when pull request has made
 This project is licensed under the MIT license.
 
 ## Contributing
-Emay Lin, Gabriela Olivas, Ivey Lee, Julee Butler, Toogii D
+Develop using project2_development branch and create pull request per change.
+
+git clone --single-branch --branch project2_development git@github.com:Toogii2019/Project2_repo.git
 
 ## API
 -Tetris/Flappy Bird/Trivia
