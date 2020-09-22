@@ -114,7 +114,7 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            res.sendFile(path.join(__dirname, '../public/map/map.html'));
+            res.render("map"); 
           }
         });
     }
