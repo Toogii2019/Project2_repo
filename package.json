@@ -20,13 +20,15 @@
     "client-sessions": "^0.8.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
     "express-session": "^1.17.1",
+    "i": "^0.3.6",
     "inquirer": "^6.3.1",
     "multer": "^1.4.2",
-    "mysql2": "^1.6.4",
-    "sequelize": "^4.41.2"
+    "mysql2": "^1.7.0",
+    "sequelize": "^4.44.4"
   },
   "devDependencies": {
     "jest": "^24.8.0",
