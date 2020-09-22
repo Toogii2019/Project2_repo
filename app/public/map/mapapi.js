@@ -1,5 +1,5 @@
 var map;
-const apiKey = process.env.googlemapApi;
+const apiKey = "AIzaSyChs4wyhn9M-1Nl7QJkEInXTOy0p4347Jo";
 
 // Map
 function initMap() {
@@ -76,3 +76,4 @@ const zip = event.target.value;
   })   
   })
 };
+
