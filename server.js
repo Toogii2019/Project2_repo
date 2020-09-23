@@ -7,8 +7,6 @@ var PORT = process.env.PORT || 8080;
 var session = require('express-session');
 var cors = require('cors');
 
-require('dotenv').config();
-
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
