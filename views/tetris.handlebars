@@ -48,6 +48,11 @@
         </article>
       
       </section>
+<form class="form-score" action="/api/add_score/tetris" method="POST">
+<input type="hidden" class="form-control" id="email" name="email" placeholder="email" value={{user.email}}>
+<input type="hidden" class="form-control" id="input-score" name="inputScore" placeholder="Score">
+<button class="btn btn-lg btn-primary btn-block" id="Submit" type="submit">Submit Score</button>
+</form>     
 <a href="/" style="color:white;">Go back to main page</a>
 <script src="assets/js/jquery-1.11.1.min.js"></script>
 <script src="src/blockrain.jquery.libs.js"></script>
@@ -55,6 +60,8 @@
 <script src="src/blockrain.jquery.themes.js"></script>
 
 <script>
+  var myScore = 0;
+  var myScoreContainer = document.getElementById("input-score");
   var $cover = $('#cover-tetris').blockrain({
     autoplay: true,
     autoplayRestart: true,
@@ -66,7 +73,6 @@
   
 
   var versusSpeed = 100;
-
   var $versus1 = $('#tetris-versus-1 .game').blockrain({
     autoplay: true,
     autoplayRestart: true,
@@ -76,6 +82,8 @@
       $versus2.blockrain('restart');
       var $score = $versus2.parent().find('.score');
       $score.text( parseInt($score.text()) + 1 );
+      
+      
     }
   });
   var $versus2 = $('#tetris-versus-2 .game').blockrain({
@@ -97,10 +105,14 @@
     onStart: function() {
       ga( 'send', 'event', 'tetris', 'started');
     },
-    onLine: function() {
+    onLine: function(score) {
+      myScore = myScore + score
+      myScoreContainer.value = myScore;
+
       ga( 'send', 'event', 'tetris', 'line');
     },
     onGameOver: function(score){
+      myScoreContainer.value = score/400;
       ga( 'send', 'event', 'tetris', 'over', score);
     }
   });
@@ -133,4 +145,4 @@
 </script>
 
 </body>
-</html>>
+</html>
