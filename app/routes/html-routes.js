@@ -108,7 +108,7 @@ module.exports = function(app) {
   });
 
 
-  app.get("/map", function(req, res) {
+  app.get("/redeem", function(req, res) {
 
     if (req.session.user) {
       Users.findOne({
