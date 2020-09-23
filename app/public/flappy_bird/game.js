@@ -231,7 +231,6 @@ const bird = {
                pipe.moved = false;
                myScore = UI.score.curr;
                myScoreContainer.value = myScore;
-               console.log(myScoreContainer);
            }
 
            

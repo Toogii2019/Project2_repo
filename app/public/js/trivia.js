@@ -1,3 +1,4 @@
+var myScoreContainer = document.getElementById("input-score");
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
 const progressText = document.getElementById('progressText');
@@ -49,7 +50,7 @@ fetch(
     });
 
 //CONSTANTS
-const CORRECT_BONUS = 10;
+const CORRECT_BONUS = 1;
 const MAX_QUESTIONS = 10;
 
 startGame = () => {
@@ -65,7 +66,14 @@ getNewQuestion = () => {
     if (availableQuesions.length === 0 || questionCounter >= MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score);
         //Redirect to the end Score page
-        return window.location.assign('/.html');
+        var newScore = {inputScore: score, email: document.getElementById("email").value};
+        $.post("/api/add_score/trivia", newScore)
+        // On success, run the following code
+        .then(function() {
+            return window.location.assign('/');
+        });
+
+        
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
@@ -112,4 +120,5 @@ choices.forEach((choice) => {
 incrementScore = (num) => {
     score += num;
     scoreText.innerText = score;
+    myScoreContainer.value = score;
 };
