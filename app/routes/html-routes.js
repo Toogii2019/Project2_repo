@@ -95,7 +95,8 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            res.sendFile(path.join(__dirname, '../public/flappy_bird/flappy_bird.html'));
+            var userName = {email: req.session.user};
+            res.render("flappy_bird", {user: userName});
           }
         });
     }

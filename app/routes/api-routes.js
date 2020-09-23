@@ -7,6 +7,7 @@
 var path = require("path");
 var writeUserToDb = require("../../lib/createUser.js");
 var Users = require("../models/users.js");
+var Game = require("../models/game.js");
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var upload = multer();
@@ -61,7 +62,33 @@ module.exports = function(app) {
     var messageData = {msg: "Successfully logged out"};
     res.render("signin", {message: messageData}); 
   });
-
+  
+  app.post("/api/add_score/game", function(req, res) {
+    Game.findOne({
+      where: {
+        email: req.body.email,
+      }
+    }).then(function(result) {
+      let newScore = parseInt(result.score) + parseInt(req.body.inputScore);
+        console.log(parseInt(result.score) + parseInt(req.body.inputScore));
+        Game.update(
+          {
+            score: newScore,
+          },
+          {
+            where: {
+              email: req.body.email,
+            }
+          }
+          )
+          .then(function() {
+            res.redirect("/");
+          });
+      });
+    });
 };
+
+
+
 
 
