@@ -1,3 +1,6 @@
+var myScore = 0;
+var myScoreContainer = document.getElementById("input-score");
+console.log(myScoreContainer);
 const RAD = Math.PI/180;
 const scrn = document.getElementById('canvas');
 const sctx = scrn.getContext("2d");
@@ -226,6 +229,9 @@ const bird = {
                UI.score.curr++;
                SFX.score.play();
                pipe.moved = false;
+               myScore = UI.score.curr;
+               myScoreContainer.value = myScore;
+               console.log(myScoreContainer);
            }
 
            

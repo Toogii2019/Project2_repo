@@ -10,7 +10,14 @@
 </head>
 <body>
     <canvas id="canvas" width="276" height="414"></canvas>
-    <script src="game.js"></script>
+    
     <a href="/">Go back to main page</a>
+    <form class="form-score" action="/api/add_score/game" method="POST">
+    <input type="hidden" class="form-control" id="email" name="email" placeholder="email" value={{user.email}}>
+    <input type="hidden" class="form-control" id="input-score" name="inputScore" placeholder="Score">
+    <button class="btn btn-lg btn-primary btn-block" id="Submit" type="submit">Submit Score</button>
+    </form>
+    <script src="game.js"></script>
 </body>
 </html>
+
