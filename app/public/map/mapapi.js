@@ -23,7 +23,6 @@ input.addEventListener("keyup", function(event) {
 // Search Zipcode
 function getMarkets(event){
 const zip = event.target.value;
-console.log(zip);
 
   //API call maps
   $.get(`https://mighty-bayou-53278.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${apiKey}`)
@@ -63,9 +62,7 @@ console.log(zip);
       content: ""
       });
 
-      
       marker.addListener('click', function(event) {
-      document.getElementById("store-name").textContent = marker.title;
       var myLat = event.latLng.lat();
       var myLng = event.latLng.lng();
       var mylatLng = new google.maps.LatLng(myLat, myLng);
