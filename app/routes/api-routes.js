@@ -9,8 +9,6 @@ var writeUserToDb = require("../../lib/createUser.js");
 var Users = require("../models/users.js");
 var Game = require("../models/game.js");
 var bodyParser = require('body-parser');
-var multer = require('multer');
-var upload = multer();
 const bcrypt = require("bcryptjs");
 
 // Routes

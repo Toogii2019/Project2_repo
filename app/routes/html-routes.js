@@ -111,13 +111,15 @@ module.exports = function(app) {
   app.get("/redeem", function(req, res) {
 
     if (req.session.user) {
-      Users.findOne({
+      Game.findOne({
         where: {
           email: req.session.user,
         }      
         }).then(function(result) {
           if (result) {
-            res.render("map"); 
+            console.log(result);
+            var userName = {username: req.session.user, score: result.score};
+            res.render("map", {user: userName});
           }
         });
     }
@@ -126,7 +128,6 @@ module.exports = function(app) {
     }
   });
 
-  
   app.use(function(req, res){
     res.redirect("/");
   });
