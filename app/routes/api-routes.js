@@ -63,14 +63,13 @@ module.exports = function(app) {
     res.render("signin", {message: messageData}); 
   });
   
-  app.post("/api/add_score/game", function(req, res) {
+  app.post("/api/add_score/:game", function(req, res) {
     Game.findOne({
       where: {
         email: req.body.email,
       }
     }).then(function(result) {
       let newScore = parseInt(result.score) + parseInt(req.body.inputScore);
-        console.log(parseInt(result.score) + parseInt(req.body.inputScore));
         Game.update(
           {
             score: newScore,
