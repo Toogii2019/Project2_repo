@@ -38,6 +38,7 @@ const zip = event.target.value;
       var lng = data.results[i].geometry.location.lng;
       var latLng = new google.maps.LatLng(lat, lng);
 
+
       // Set Bounds
       bounds  = new google.maps.LatLngBounds();
 
@@ -61,9 +62,7 @@ const zip = event.target.value;
       content: ""
       });
 
-      
       marker.addListener('click', function(event) {
-
       var myLat = event.latLng.lat();
       var myLng = event.latLng.lng();
       var mylatLng = new google.maps.LatLng(myLat, myLng);

@@ -109,7 +109,7 @@ module.exports = function(app) {
   });
 
 
-  app.get("/map", function(req, res) {
+  app.get("/redeem", function(req, res) {
 
     if (req.session.user) {
       Users.findOne({
@@ -118,12 +118,21 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            res.render("map"); 
+
+            Game.findOne({
+              where: {
+                email: result.email,
+              }
+            }).then(function(game_result) {
+              var userData = {username: game_result.email, score : game_result.score};
+              res.render("map", {user: userData});
+            })
           }
         });
     }
     else {
-      res.redirect("/sign_in"); 
+      var messageData = {msg: "Please Sign In"};
+      res.render("signin", {message: messageData}); 
     }
   });
 
