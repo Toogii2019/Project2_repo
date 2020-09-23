@@ -78,7 +78,9 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            res.sendFile(path.join(__dirname, '../public/tetris/tetris.html'));
+            var userName = {email: req.session.user};
+            res.render("tetris", {user: userName});
+
           }
         });
     }

@@ -64,6 +64,7 @@ module.exports = function(app) {
   });
   
   app.post("/api/add_score/:game", function(req, res) {
+
     Game.findOne({
       where: {
         email: req.body.email,
