@@ -56,12 +56,8 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-<<<<<<< HEAD
-            res.render("trivia");
-=======
             var userName = {email: req.session.user};
             res.render("trivia", {user: userName});
->>>>>>> 89b5e843d2f0bfde1ec224a38f55b49525f7c6e5
           }
         });
     }
@@ -82,13 +78,8 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-<<<<<<< HEAD
-            res.render("tetris"));
-=======
             var userName = {email: req.session.user};
             res.render("tetris", {user: userName});
-
->>>>>>> 89b5e843d2f0bfde1ec224a38f55b49525f7c6e5
           }
         });
     }
@@ -106,12 +97,8 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-<<<<<<< HEAD
-            res.render("flappy_bird");
-=======
             var userName = {email: req.session.user};
             res.render("flappy_bird", {user: userName});
->>>>>>> 89b5e843d2f0bfde1ec224a38f55b49525f7c6e5
           }
         });
     }
