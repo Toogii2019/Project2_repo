@@ -8,7 +8,6 @@ var session = require('express-session');
 var cors = require('cors');
 
 require('dotenv').config();
-console.log(process.env.googlemapApi);
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
