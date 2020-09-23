@@ -56,7 +56,7 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            res.sendFile(path.join(__dirname, '../public/trivia/trivia.html'));
+            res.render("trivia");
           }
         });
     }
@@ -77,7 +77,7 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            res.sendFile(path.join(__dirname, '../public/tetris/tetris.html'));
+            res.render("tetris"));
           }
         });
     }
@@ -95,7 +95,7 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            res.sendFile(path.join(__dirname, '../public/flappy_bird/flappy_bird.html'));
+            res.render("flappy_bird");
           }
         });
     }
