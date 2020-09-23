@@ -56,7 +56,12 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
+<<<<<<< HEAD
             res.render("trivia");
+=======
+            var userName = {email: req.session.user};
+            res.render("trivia", {user: userName});
+>>>>>>> 89b5e843d2f0bfde1ec224a38f55b49525f7c6e5
           }
         });
     }
@@ -77,7 +82,13 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
+<<<<<<< HEAD
             res.render("tetris"));
+=======
+            var userName = {email: req.session.user};
+            res.render("tetris", {user: userName});
+
+>>>>>>> 89b5e843d2f0bfde1ec224a38f55b49525f7c6e5
           }
         });
     }
@@ -95,7 +106,12 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
+<<<<<<< HEAD
             res.render("flappy_bird");
+=======
+            var userName = {email: req.session.user};
+            res.render("flappy_bird", {user: userName});
+>>>>>>> 89b5e843d2f0bfde1ec224a38f55b49525f7c6e5
           }
         });
     }
@@ -105,7 +121,7 @@ module.exports = function(app) {
   });
 
 
-  app.get("/map", function(req, res) {
+  app.get("/redeem", function(req, res) {
 
     if (req.session.user) {
       Users.findOne({
@@ -114,12 +130,21 @@ module.exports = function(app) {
         }      
         }).then(function(result) {
           if (result) {
-            res.render("map"); 
+
+            Game.findOne({
+              where: {
+                email: result.email,
+              }
+            }).then(function(game_result) {
+              var userData = {username: game_result.email, score : game_result.score};
+              res.render("map", {user: userData});
+            })
           }
         });
     }
     else {
-      res.redirect("/sign_in"); 
+      var messageData = {msg: "Please Sign In"};
+      res.render("signin", {message: messageData}); 
     }
   });
 
