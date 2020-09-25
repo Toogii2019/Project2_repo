@@ -25,20 +25,34 @@
       </script>
 
 </head>
-<style> 
+    <style> 
         body {
             background-image: 
             url(/img/tetris.png);
             background-position: auto;
             background-size: cover;
         }
+        article{
+          position: absolute;
+          top: 100px;
+          left: 60%;
+        }
+         #button{
+          position: absolute;
+          bottom: 50px;
+          left: 20px;
+         }
+         
     </style>
+
+
+
 <body>
     
     <section id="examples">
         <header>
-          <h1>Tetris Game</h1>
         </header>
+
         <article id="example-slider">
           <div class="example">
             <div class="instructions">
@@ -59,9 +73,11 @@
 <form class="form-score" action="/api/add_score/tetris" method="POST">
 <input type="hidden" class="form-control" id="email" name="email" placeholder="email" value={{user.email}}>
 <input type="hidden" class="form-control" id="input-score" name="inputScore" placeholder="Score">
-<button class="btn btn-lg btn-primary btn-block" id="Submit" type="submit">Submit Score</button>
-</form>     
-<a href="/" style="color:white;">Go back to main page</a>
+<div id="button">
+  <button class="btn btn-lg btn-primary btn-block" id="Submit" type="submit">Submit Score</button>
+</div>
+</form> 
+
 <script src="/tetris/assets/js/jquery-1.11.1.min.js"></script>
 <script src="/tetris/src/blockrain.jquery.libs.js"></script>
 <script src="/tetris/src/blockrain.jquery.src.js"></script>
