@@ -7,47 +7,78 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Signin Template · Bootstrap</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
-
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-  .bg-image {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
+<style>
+      @media (min-width: 200px) {
         .bg-image {
           font-size: 3.5rem;
         }
-      }
-    </style>
+    body {
+            background-image:
+                url("/Users/NewUser/Project2_repo/app/public/css/276505.jpg");
+            background-position: auto;
+            background-size: fill;
+        }
+    h1 {
+        text-align : center;
+        position: center;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+        font-size: 10vw;
+        font-weight: 900;
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        background-size: 100% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-background-clip: text;
+        -moz-text-fill-color: transparent;
+        -ms-background-clip: text;
+        -ms-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        background-image: linear-gradient(45deg,
+                    #F89E17,
+                    #C26112,
+                    #BE1717,
+                    #BE1717);
+        animation: .8s shake infinite alternate;
+    }
+        @keyframes shake {
+        0% { transform: skewX(-15deg); }
+        5% { transform: skewX(15deg); }
+        10% { transform: skewX(-15deg); }
+        15% { transform: skewX(15deg); }
+        20% { transform: skewX(0deg); }
+        100% { transform: skewX(0deg); }
+    }
+    h2{
+        text-align : center;
+        color: #F89E17;
+    }
+</style>
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
     <!-- <link href="test.css" rel="stylesheet">  -->
   </head>
   <body class="text-center">
-> <img class="mb-4" src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F782%2Fnight-dark-halloween-horror.jpg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200" alt="" width="100%" height="100%">
-  <form class="form-signin">
-  <h1 class="h3 mb-3 font-weight-normal">Enter if you Dare...</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-  <p class="mt-5 mb-3 text-muted">&copy; Halloween 2020</p>
-</form>
-</body>
+      <form class="form-signin">
+        <h1> Trick or Treat </h1>
+        <h2 class="h3 mb-3 font-weight-normal">Play if you Dare... </h2>
+            </div>
+        <p class="mt-5 mb-3 text-muted">&copy; Halloween 2020</p>
+      </form>
+  </body>
+
+<main role="main">
+
+<p align ="right"><button type="button" class="btn-primary btn-lg">Flappy Bird</button></p>
+<center><button type="button" class="btn-secondary btn-lg">Trivia</button></center>
+<right><button type="button" class="btn-success btn-lg">Tetris</button></right>
+<center><button type="button" class="btn-success btn-lg">Redeem Score</button></center>
+
+
 </html>
