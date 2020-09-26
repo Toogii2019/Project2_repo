@@ -10,6 +10,8 @@
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Home</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap" rel="stylesheet">
+
       <style>
       #map {
         width: 100%;
@@ -17,17 +19,23 @@
         background-color: grey;
       }
       body {
-        background-image: url("/img/Maphouse.jpg")no-repeat center fixed;
+        background-image: url("/img/Maphouse.jpg");
         background-size: cover;
-      }
+        background-repeat: no-repeat center fixed;
+        font-family: Fontdiner Swanky;
+        color:white}
+          .text{background-color: black;
+          opacity: 0.7;}
     </style>
   </head>
   <body>
+  <div class ="text">
     <h1>Redeem your prize at </h1><span id="store"></span>
     <h2>Your email: {{user.username}}</h2>
     <h2>Your Score: {{user.score}}</h2>
     <!--The div element for the map -->
     <h2>Please enter your zipcode</h2>
+  </div>
     <input
     id="pac-input"
     class="controls"
