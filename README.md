@@ -130,7 +130,15 @@ This project is licensed under the MIT license.
 Additional images were designed by Freepik, found on: [Freepik] (https://www.freepik.com)
 
 ## The URL of the deployed application
-https://insanecoolapp.herokuapp.com/
+
+1. Github repository and heroku are integrated
+2. Changes in master branch triggers heroku deployment automatically
+3. https://insanecoolapp.herokuapp.com/
+
+<img src="app/public/img/heroku.png" width="600" height="300">
 
 ## The URL of the GitHub repository
 https://github.com/Toogii2019/Project2_repo
+
+
+## 
