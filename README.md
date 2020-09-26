@@ -129,7 +129,7 @@ This project is licensed under the MIT license.
 
 Additional images were designed by Freepik, found on: [Freepik] (https://www.freepik.com)
 
-## The URL of the deployed application
+## The URL of the deployed application / CD
 
 1. Github repository and heroku are integrated
 2. Changes in master branch triggers heroku deployment automatically
