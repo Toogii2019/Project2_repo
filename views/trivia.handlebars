@@ -71,34 +71,34 @@
   </body>
     <script src="/trivia/trivia.js"></script>
     <style>
-        body {
+     body {
           background: url(/img/trivia_background.png);
           background-position: auto;
-          background-size: cover;   
-          font-family: Fontdiner Swanky;                                                                         
+          background-size: cover;
+          font-family: Fontdiner Swanky;
         }
         #question {
-          position: absolute;
+          display: flex;
           top: 25px;
           left: 20px;
         }
         #hud {
-          position: absolute;
+          display: absolute;
           top: 25%;
           left: 10px;
         }
         h3 {
           position: absolute;
-          top: 200px; 
+          top: 200px;
           left: 50px;
         }
         #score {
           position: absolute;
-          top: 200px; 
+          top: 200px;
           left: 150px;
         }
         #list {
-          position: absolute;
+          display: absolute;
           top: 100px;
           left: 350px;
         }
@@ -108,10 +108,59 @@
           bottom: 75px;
           left: 50px;
         }
-      
-          
-
-
+        #justify-center {
+          text-align: center;
+        }
+        #hud {
+          position: absolute;
+          top: 25%;
+          left: 10px;
+        }
+        .hud-prefix {
+          text-align: left;
+          font-size: 2rem;
+        }
+        .choice-container {
+          display: flex;
+          margin-bottom: 0.5rem;
+          width: 50%;
+          font-size: 1.8rem;
+          border: 0.1rem solid rgb(86, 165, 235, 0.25);
+          background-color: #141414;
+        }
+        .choice-container:hover {
+          cursor: pointer;
+          box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+          transform: translateY(-0.1rem);
+          transition: transform 150ms;
+        }
+        .choice-prefix {
+          padding: 1.5rem 2.5rem;
+          background-color: #EB9E56;
+          color: white;
+        }
+        .choice-text {
+          padding: 1.5rem;
+          width: 100%;
+          color: white;
+        }
+        .correct {
+          background-color: #28A745;
+        }
+        .incorrect {
+          background-color: #DC3545;
+        }
+        #progressBar {
+          width: 20rem;
+          height: 4rem;
+          border: 0.3rem solid #EB9E56;
+          margin-top: 1.5rem;
+        }
+        #progressBarFull {
+          height: 3.4rem;
+          background-color: #EB9E56;
+          width: 0%;
+        }
 
     </style>
 </html>

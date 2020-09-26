@@ -68,12 +68,26 @@
     .username {
       position: top;
     }
-    .game {
+    .trivia {
       width: 10vw;
       height: 20vh;
       background-image: url(https://www.flaticon.com/svg/static/icons/svg/1089/1089475.svg);
       background-size: cover;
     }
+    .tetris {
+      width: 10vw;
+      height: 20vh;
+      background-image: url(https://www.flaticon.com/svg/static/icons/svg/3420/3420406.svg);
+      background-size: cover;
+    }
+    .flappy {
+      width: 10vw;
+      height: 20vh;
+      background-image: url(https://www.flaticon.com/svg/static/icons/svg/3473/3473969.svg);
+      background-size: cover;
+    }
+
+
     .links {
       position: center;
       display: flex;
@@ -82,6 +96,7 @@
       justify-content: center;
       width: 100vw;
     }
+    
 </style>
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
@@ -94,26 +109,28 @@
        <div class="backend-info">
   	   <p class="username">User Info: {{user.username}}</p>
        <p class="score">Score: {{user.score}}</p>
+       <a href="/redeem">Redeem Score</a>
        </div>
   {{/if}}
   <h1>Play if you dare</h1>
   <div class="links">
-  <div class="game">
-    <a href="/trivia">Play Trivia</a>
+  <div class="trivia">
+    <a href="/trivia"></a>
   </div>
-  <div class="game">
-    <a href="/tetris">Play Tetris</a>
+  <div class="tetris">
+    <a href="/tetris"></a>
   </div>
-  <div class="game">
-  <a href="/flappy_bird">Play FlappyBird</a>
+  <div class="flappy">
+  <a href="/flappy_bird"></a>
   </div>
-  <div class="game">
-  <a href="/redeem">Redeem Score</a><br><br>
-  </div>
+  <br><br>
   </div><br><br>
     <button type="submit" class="btn btn-primary">Sign Out</button>
   </form>
   
   </body>
+  <script>
+    
+  </script>
 </html>
 </body>
