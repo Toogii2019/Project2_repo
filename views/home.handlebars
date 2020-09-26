@@ -74,6 +74,9 @@
       background-image: url(https://www.flaticon.com/svg/static/icons/svg/1089/1089475.svg);
       background-size: cover;
     }
+    .trivia:hover {
+      color: green;
+    }
     .tetris {
       width: 10vw;
       height: 20vh;
@@ -114,23 +117,31 @@
   {{/if}}
   <h1>Play if you dare</h1>
   <div class="links">
-  <div class="trivia">
+  <div class="trivia" id="trivia">
     <a href="/trivia"></a>
   </div>
-  <div class="tetris">
+  <div class="tetris" id="tetris">
     <a href="/tetris"></a>
   </div>
-  <div class="flappy">
+  <div class="flappy" id="flappy">
   <a href="/flappy_bird"></a>
   </div>
   <br><br>
   </div><br><br>
     <button type="submit" class="btn btn-primary">Sign Out</button>
   </form>
-  
-  </body>
   <script>
-    
+    document.getElementById("trivia").addEventListener("click", function() {
+      return window.location.assign('/trivia');
+    });
+    document.getElementById("tetris").addEventListener("click", function() {
+      return window.location.assign('/tetris');
+    });
+    document.getElementById("flappy").addEventListener("click", function() {
+      return window.location.assign('/flappy_bird');
+    })
   </script>
+  </body>
+
 </html>
 </body>
