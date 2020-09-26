@@ -1,19 +1,7 @@
-  <form action="/api/sign_out" method="POST">
-    <button type="submit" class="btn btn-primary">Sign Out</button>
-  </form>
-  
-  {{#if user}}
-  	   <p>User Info: {{user.username}}</p>
-       <p>Score: {{user.score}}</p>
-  {{/if}}
-</ul>
-<a href="/trivia">Play Trivia</a>
-<a href="/tetris">Play Tetris</a>
-<a href="/flappy_bird">Play FlappyBird</a>
-<a href="/redeem">Redeem Score</a>
-
-<h3>Welcome to Home Page</h3>
+<body>
 <!doctype html>
+<div class="container">
+  <div class="row">
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -21,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Home</title>
+    <title>Sign-in</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +19,7 @@
           font-size: 3.5rem;
         }
     body {
-           background-image:
+            background-image:
                 url("/img/Pumpkin.jpg");
             background-position: auto;
             background-size: cover;
@@ -74,19 +62,95 @@
         text-align : center;
         color: #F89E17;
     }
+    .backend-info {
+      color: white;
+      font-family: Fontdiner Swanky;   
+      
+    }
+    .username {
+      position: top;
+    }
+    .trivia {
+      width: 10vw;
+      height: 20vh;
+      background-image: url(https://www.flaticon.com/svg/static/icons/svg/1089/1089475.svg);
+      background-size: cover;
+    }
+    .trivia:hover {
+      animation: .8s shake infinite alternate;
+    }
+    .tetris:hover {
+      animation: .8s shake infinite alternate;
+    }
+    .flappy:hover {
+      animation: .8s shake infinite alternate;
+    }
+    .tetris {
+      width: 10vw;
+      height: 20vh;
+      background-image: url(https://www.flaticon.com/svg/static/icons/svg/3420/3420406.svg);
+      background-size: cover;
+    }
+    .flappy {
+      width: 10vw;
+      height: 20vh;
+      background-image: url(https://www.flaticon.com/svg/static/icons/svg/3473/3473969.svg);
+      background-size: cover;
+    }
+
+
+    .links {
+      position: center;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      width: 100vw;
+    }
+    
 </style>
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
     <!-- <link href="test.css" rel="stylesheet">  -->
   </head>
   <body class="text-center">
-  <form class="form-signin" action="/api/sign" method="POST">
-  <h1> Play if you Dare... </h1>
-            </div>
-        <p class="mt-5 mb-3 text-muted">&copy; Halloween 2020</p>
-      </form>
+        
+  <form action="/api/sign_out" method="POST">
+    {{#if user}}
+       <div class="backend-info">
+  	   <p class="username">User Info: {{user.username}}</p>
+       <p class="score">Score: {{user.score}}</p>
+       <a href="/redeem">Redeem Score</a>
+       </div>
+  {{/if}}
+  <h1>Play if you dare</h1>
+  <div class="links">
+  <div class="trivia" id="trivia">
+    <a href="/trivia"></a>
+  </div>
+  <div class="tetris" id="tetris">
+    <a href="/tetris"></a>
+  </div>
+  <div class="flappy" id="flappy">
+  <a href="/flappy_bird"></a>
+  </div>
+  <br><br>
+  </div><br><br>
+    <button type="submit" class="btn btn-primary">Sign Out</button>
+  </form>
+  <script>
+    document.getElementById("trivia").addEventListener("click", function() {
+      return window.location.assign('/trivia');
+    });
+    document.getElementById("tetris").addEventListener("click", function() {
+      return window.location.assign('/tetris');
+    });
+    document.getElementById("flappy").addEventListener("click", function() {
+      return window.location.assign('/flappy_bird');
+    })
+  </script>
   </body>
 
-<main role="main">
-
 </html>
+  </div>
+</body>

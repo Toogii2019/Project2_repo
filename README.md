@@ -35,8 +35,10 @@ SO THAT I can enjoy Halloween in safe environment with social distancing
 * HTML
 * CSS
 * JavaScript
+* JQuery
+* Travis CI
 * Node Packages
-      -sequel
+      -sequelize
 
       -mysql
 
@@ -100,12 +102,6 @@ WHEN User click on the link for the location/map,
 
 THEN Participating stores will show on the map.
 
-## Tests
-
-Continuous Integration (CI)
-
-Travis CI will run npm test when pull request has made
-
 ## Develop
 
 * Custom libraries at lib/
@@ -128,6 +124,10 @@ This project is licensed under the MIT license.
 [Flappy-Bird](https://github.com/D4rk1n/JS-Flappy-Bird)
 
 [Trivia](https://opentdb.com/api_config.php)
+
+[Flaticon] (https://www.flaticon.com/)
+
+Additional images were designed by Freepik, found on: [Freepik] (https://www.freepik.com)
 
 ## The URL of the deployed application
 https://insanecoolapp.herokuapp.com/
