@@ -24,7 +24,7 @@
     <a href="/">Go back to main page</a>
     <form class="form-score" action="/api/add_score/flappy" method="POST">
     <input type="hidden" class="form-control" id="email" name="email" placeholder="email" value={{user.email}}>
-    <input type="hidden" class="form-control" id="input-score" name="inputScore" placeholder="Score">
+    <input type="hidden" class="form-control" id="input-score" name="inputScore" placeholder="Score" value=0>
     <button class="btn btn-lg btn-primary btn-block" id="Submit" type="submit">Submit Score</button>
     </form>
     <script src="/flappy_bird/game.js"></script>

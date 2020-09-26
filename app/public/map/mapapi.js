@@ -23,7 +23,7 @@ input.addEventListener("keyup", function(event) {
 // Search Zipcode
 function getMarkets(event){
 const zip = event.target.value;
-
+const bounds  = new google.maps.LatLngBounds();
   //API call maps
   $.get(`https://mighty-bayou-53278.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${zip}&key=${apiKey}`)
   .then(({results})=> {
@@ -38,9 +38,7 @@ const zip = event.target.value;
       var lng = data.results[i].geometry.location.lng;
       var latLng = new google.maps.LatLng(lat, lng);
 
-
-      // Set Bounds
-      bounds  = new google.maps.LatLngBounds();
+      
 
       var marker = new google.maps.Marker({
       position: latLng,
@@ -54,26 +52,23 @@ const zip = event.target.value;
       loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
       bounds.extend(loc);
       
-      //Rezoom and Recenter
-      map.fitBounds(bounds);
-      map.panTo(latLng);
-
       var infowindow = new google.maps.InfoWindow({
-      content: ""
+        content: ""
       });
-
+      
       marker.addListener('click', function(event) {
-      document.getElementById("store").textContent = this.title;
-      var myLat = event.latLng.lat();
-      var myLng = event.latLng.lng();
-      var mylatLng = new google.maps.LatLng(myLat, myLng);
-      infowindow.open(map, marker);
-      infowindow.setContent("<h3>"+this.title+"</h3>");
-      infowindow.setPosition(mylatLng);
+        document.getElementById("store").textContent = this.title;
+        var myLat = event.latLng.lat();
+        var myLng = event.latLng.lng();
+        var mylatLng = new google.maps.LatLng(myLat, myLng);
+        infowindow.open(map, marker);
+        infowindow.setContent("<h3>"+this.title+"</h3>");
+        infowindow.setPosition(mylatLng);
       });
       marker.setMap(map);
     }
+    map.fitBounds(bounds);
   })   
-  })
+})
 };
 
