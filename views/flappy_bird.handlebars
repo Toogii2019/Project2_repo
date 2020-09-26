@@ -16,17 +16,25 @@
             background-size: cover;
         }
         #canvas {
-            margin-left: 570px;
-            margin-top: 300px;
+            position: absolute;
+            top: 45%;
+            left: 40%;
+        }
+        #button{
+          position: absolute;
+          bottom: 50px;
+          left: 20px;
+          clip: rect(0px,200px,200px,0px);
         }
     </style>
 <body>
     <canvas id="canvas" width="276" height="414"></canvas>
-    <a href="/">Go back to main page</a>
     <form class="form-score" action="/api/add_score/flappy" method="POST">
     <input type="hidden" class="form-control" id="email" name="email" placeholder="email" value={{user.email}}>
-    <input type="hidden" class="form-control" id="input-score" name="inputScore" placeholder="Score" value=0>
+    <input type="hidden" class="form-control" id="input-score" name="inputScore" placeholder="Score">
+    <div id="button">
     <button class="btn btn-lg btn-primary btn-block" id="Submit" type="submit">Submit Score</button>
+    </div>
     </form>
     <script src="/flappy_bird/game.js"></script>
 </body>
