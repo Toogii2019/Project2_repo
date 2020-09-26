@@ -141,4 +141,6 @@ Additional images were designed by Freepik, found on: [Freepik] (https://www.fre
 https://github.com/Toogii2019/Project2_repo
 
 
-## 
+## Code Structure / core algorithm
+
+<img src="app/public/img/structure.png" width="600" height="300">
