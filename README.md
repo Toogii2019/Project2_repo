@@ -22,7 +22,7 @@ SO THAT I can enjoy Halloween in safe environment with social distancing
 
 ## Screenshots of the Deployed Application 
 
-(Screenshot Link)
+<img src="app/public/img/app.png" width="600" height="300">
 
 ## Table of Contents
   - [Installation](#installation)
