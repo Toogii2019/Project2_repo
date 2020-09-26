@@ -26,14 +26,15 @@
           </div>
           <div id="hud-item">
             <p class="hud-prefix">
-              Score
+              <h3>Score :</h3>
             </p>
             <h1 class="hud-main-text" id="score">
-              0
+             0
             </h1>
           </div>
         </div>
         <h2 id="question"></h2>
+        <div id="list">
         <div class="choice-container">
           <p class="choice-prefix">A</p>
           <p class="choice-text" data-number="1"></p>
@@ -50,27 +51,62 @@
           <p class="choice-prefix">D</p>
           <p class="choice-text" data-number="4"></p>
         </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+  <div id="button">
     <form class="form-score" action="/api/add_score/game" method="POST">
     <input type="hidden" class="form-control" id="email" name="email" placeholder="email" value={{user.email}}>
     <input type="hidden" class="form-control" id="input-score" name="inputScore" placeholder="Score" value=0>
     <button class="btn btn-lg btn-primary btn-block" id="Submit" type="submit">Submit Score</button>
+  </div>
     </form>
   </body>
     <script src="/trivia/trivia.js"></script>
     <style>
-      * {
-          margin: 0 auto;
-        }
-
         body {
           background: url(/img/trivia_background.png);
           background-position: auto;
           background-size: cover;   
-          font-family: Fontdiner Swanky;                                                                             
+          font-family: Fontdiner Swanky;                                                                         
         }
+        #question {
+          position: absolute;
+          top: 25px;
+          left: 20px;
+        }
+        #hud {
+          position: absolute;
+          top: 25%;
+          left: 10px;
+        }
+        h3 {
+          position: absolute;
+          top: 200px; 
+          left: 50px;
+        }
+        #score {
+          position: absolute;
+          top: 200px; 
+          left: 150px;
+        }
+        #list {
+          position: absolute;
+          top: 100px;
+          left: 350px;
+        }
+       #button{
+          position: absolute;
+          clip: rect(0px,200px,200px,0px);
+          bottom: 75px;
+          left: 50px;
+        }
+      
+          
+
+
+
     </style>
 </html>
