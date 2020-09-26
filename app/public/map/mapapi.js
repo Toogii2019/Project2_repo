@@ -57,7 +57,6 @@ const bounds  = new google.maps.LatLngBounds();
       });
       
       marker.addListener('click', function(event) {
-        document.getElementById("store").textContent = this.title;
         var myLat = event.latLng.lat();
         var myLng = event.latLng.lng();
         var mylatLng = new google.maps.LatLng(myLat, myLng);
