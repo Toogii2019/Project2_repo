@@ -1,18 +1,4 @@
-  <form action="/api/sign_out" method="POST">
-    <button type="submit" class="btn btn-primary">Sign Out</button>
-  </form>
-  
-  {{#if user}}
-  	   <p>User Info: {{user.username}}</p>
-       <p>Score: {{user.score}}</p>
-  {{/if}}
-</ul>
-<a href="/trivia">Play Trivia</a>
-<a href="/tetris">Play Tetris</a>
-<a href="/flappy_bird">Play FlappyBird</a>
-<a href="/redeem">Redeem Score</a>
-
-<h3>Welcome to Home Page</h3>
+<body>
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>Home</title>
+    <title>Sign-in</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +17,7 @@
           font-size: 3.5rem;
         }
     body {
-           background-image:
+            background-image:
                 url("/img/Pumpkin.jpg");
             background-position: auto;
             background-size: cover;
@@ -74,19 +60,62 @@
         text-align : center;
         color: #F89E17;
     }
+    .backend-info {
+      color: white;
+      font-family: Fontdiner Swanky;   
+      
+    }
+
+    .username {
+      position: top;
+    }
+    .game {
+      width: 10vw;
+      height: 20vh;
+      background-image: url(https://www.flaticon.com/svg/static/icons/svg/1089/1089475.svg);
+      background-size: cover;
+    }
+    .links {
+      position: center;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      width: 100vw;
+    }
 </style>
     <!-- Custom styles for this template -->
     <link href="signin.css" rel="stylesheet">
     <!-- <link href="test.css" rel="stylesheet">  -->
   </head>
   <body class="text-center">
-  <form class="form-signin" action="/api/sign" method="POST">
-  <h1> Play if you Dare... </h1>
-            </div>
-        <p class="mt-5 mb-3 text-muted">&copy; Halloween 2020</p>
-      </form>
+        
+  <form action="/api/sign_out" method="POST">
+    {{#if user}}
+       <div class="backend-info">
+  	   <p class="username">User Info: {{user.username}}</p>
+       <p class="score">Score: {{user.score}}</p>
+       </div>
+  {{/if}}
+  <h1>Play if you dare</h1>
+  <div class="links">
+  <div class="game">
+    <a href="/trivia">Play Trivia</a>
+  </div>
+  <div class="game">
+    <a href="/tetris">Play Tetris</a>
+  </div>
+  <div class="game">
+  <a href="/flappy_bird">Play FlappyBird</a>
+  </div>
+  <div class="game">
+  <a href="/redeem">Redeem Score</a><br><br>
+  </div>
+  </div><br><br>
+    <button type="submit" class="btn btn-primary">Sign Out</button>
+  </form>
+  
+
   </body>
-
-<main role="main">
-
 </html>
+</body>
