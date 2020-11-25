@@ -1,4 +1,4 @@
-# Project2_repo
+# trick_or_treat
 
 ### Team Members
 
@@ -111,7 +111,7 @@ THEN Participating stores will show on the map.
 
 Develop using project2_development branch and create pull request per change.
 
-git clone --single-branch --branch project2_development git@github.com:Toogii2019/Project2_repo.git
+git clone --single-branch --branch project2_development git@github.com:Toogii2019/trick_or_treat.git
 
 ## License
 
@@ -133,12 +133,12 @@ Additional images were designed by Freepik, found on: [Freepik] (https://www.fre
 
 1. Github repository and heroku are integrated
 2. Changes in master branch triggers heroku deployment automatically
-3. https://insanecoolapp.herokuapp.com/
+3. https://trick-or-treat-2020.herokuapp.com/
 
 <img src="app/public/img/heroku.png" width="600" height="300">
 
 ## The URL of the GitHub repository
-https://github.com/Toogii2019/Project2_repo
+https://github.com/Toogii2019/trick_or_treat
 
 
 ## Code Structure / core algorithm
